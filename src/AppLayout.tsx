@@ -5,7 +5,7 @@ import Sidebar from "@/components/Sidebar";
 
 function AppLayout() {
   return (
-    <div className="relative">
+    <div className="relative font-Inter">
       <Navbar />
       <div className="flex">
         <Sidebar />

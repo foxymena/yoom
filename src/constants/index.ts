@@ -2,26 +2,26 @@ export const sidebarLinks = [
   {
     label: 'Home',
     route: '/',
-    imgUrl: '',
+    imgUrl: '/icons/ph--house-bold.svg',
   },
   {
     label: 'Upcoming',
-    route: '/upcomings',
-    imgUrl: '',
+    route: '/upcoming',
+    imgUrl: '/icons/ph--timer-bold.svg',
   },
   {
     label: 'Previous',
     route: '/previous',
-    imgUrl: '',
+    imgUrl: '/icons/ph--file-video-bold.svg',
   },
   {
     label: 'Recordings',
     route: '/recordings',
-    imgUrl: '',
+    imgUrl: '/icons/ph--video-camera-bold.svg',
   },
   {
     label: 'Personal Room',
     route: '/personal-room',
-    imgUrl: '',
+    imgUrl: '/icons/ph--plus-bold.svg',
   },
 ];

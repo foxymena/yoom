@@ -5,6 +5,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./ErrorPage.tsx";
 import AppLayout from './AppLayout.tsx';
 import App from './App.tsx';
+
+import Upcoming from './Upcoming.tsx';
+import Previous from './Previous.tsx';
+import Recordings from './Recordings.tsx';
+import PersonalRoom from './PersonalRoom.tsx';
+
 import MeetingLayout from './MeetingLayout.tsx';
 import Meeting from './Meeting.tsx';
 import MeetingNoId from './MeetingNoId.tsx';
@@ -21,8 +27,20 @@ const router = createBrowserRouter(
           element: <App />,
         },
         {
-          path: "/test2",
-          element: <App />,
+          path: "/upcoming",
+          element: <Upcoming />,
+        },
+        {
+          path: "/previous",
+          element: <Previous />,
+        },
+        {
+          path: "/recordings",
+          element: <Recordings />,
+        },
+        {
+          path: "/personal-room",
+          element: <PersonalRoom />,
         },
       ]
     },

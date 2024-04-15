@@ -14,6 +14,13 @@ import PersonalRoom from './PersonalRoom.tsx';
 import MeetingLayout from './MeetingLayout.tsx';
 import Meeting from './Meeting.tsx';
 import MeetingNoId from './MeetingNoId.tsx';
+import { ClerkProvider } from '@clerk/clerk-react'
+
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+
+if (!PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable Key")
+}
 
 const router = createBrowserRouter(
   [
@@ -68,6 +75,8 @@ document.body.classList.add('bg-dark-2');
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+      <RouterProvider router={router} />
+    </ClerkProvider>
   </React.StrictMode>,
 )

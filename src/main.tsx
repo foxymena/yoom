@@ -73,10 +73,16 @@ const router = createBrowserRouter(
 // document.body.style.backgroundColor = `${dark.bgColor}`;
 document.body.classList.add('bg-dark-2');
 
+const navi = (to: string): Promise<unknown> | void => {
+  console.log('navi', to);
+  return ;
+}
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+    <ClerkProvider navigate={navi} publishableKey={PUBLISHABLE_KEY}>
       <RouterProvider router={router} />
     </ClerkProvider>
   </React.StrictMode>,
 )
+

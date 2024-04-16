@@ -10,7 +10,7 @@ function Navbar() {
         <p className='text=[1.625rem] font-extrabold text-white max-sm:hidden'>Yoom</p>
       </Link>
 
-      <div className='flex-between gap-5'>
+      <div className='flex-between gap-5 text-white'>
         <SignedOut>
           <SignInButton />
         </SignedOut>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 import MobileNav from './MobileNav';
 
 function Navbar() {
@@ -12,7 +12,8 @@ function Navbar() {
 
       <div className='flex-between gap-5 text-white'>
         <SignedOut>
-          <SignInButton />
+          {/* <SignInButton /> */}
+          <Link to="/sign-in">Sign In</Link>
         </SignedOut>
         <SignedIn>
           <UserButton />

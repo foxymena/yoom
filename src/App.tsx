@@ -1,34 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-
-import { Button } from "@/components/ui/button"
-
+import { useState } from 'react';
+import MeetingTypeList from '@/components/MeetingTypeList';
+// import { Button } from "@/components/ui/button"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [ttime, setTTime] = useState('');
+
+  setInterval(() => {
+    setTTime(new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }));
+  }, 1000);
 
   return (
     <section className='size-full flex flex-col gap-10 text-white'>
-      <h1 className='text-3xl font-bold'>Home</h1>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className='w-full h-[300px] rounded-[20px] bg-hero bg-cover'>
+        <div className='h-full flex flex-col justify-between max-md:px-5 max-md:py-8 lg:p-11'>
+          <h2 className='glassmorphism max-w-[270px] rounded py-2 text-center text-base font-normal'>Upcoming Meeting at: 12:30 PM</h2>
+          <div className='flex flex-col gap-2'>
+            <h1 className='text-4xl lg:text-7xl font-extrabold'>{ttime}</h1>
+            <p className='text-lg lg:text-2xl font-medium text-sky-1'>{(new Intl.DateTimeFormat('en-US', { dateStyle: 'full'})).format(new Date())}</p>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card bg-slate-400">
-        <Button onClick={() => setCount((count) => count + 1)}>count is {count}</Button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <MeetingTypeList />
+
+
+
     </section>
   )
 }
